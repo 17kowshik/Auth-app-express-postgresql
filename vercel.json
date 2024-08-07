@@ -20,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/FRONTEND/$1"
+        "dest": "/FRONTEND/main.js"
       }
     ]
   }
