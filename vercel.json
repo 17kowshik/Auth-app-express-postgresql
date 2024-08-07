@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "BACKEND/package.json",
+        "src": "BACKEND/index.js",
         "use": "@vercel/node",
         "config": {
           "maxLambdaSize": "50mb"
@@ -20,7 +20,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "/FRONTEND/main.js"
+        "dest": "/FRONTEND/$1"
       }
     ]
   }
