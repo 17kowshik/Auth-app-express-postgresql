@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "BACKEND/package.json",
+        "use": "@vercel/node",
+        "config": {
+          "maxLambdaSize": "50mb"
+        }
+      },
+      {
+        "src": "FRONTEND/**/*",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(register|login)",
+        "dest": "/BACKEND/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/FRONTEND/$1"
+      }
+    ]
+  }
+  
