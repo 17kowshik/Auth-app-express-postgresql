@@ -8,17 +8,18 @@ const app = express();
 const PORT = process.env.PORT || 5500;
 
 const corsOptions = {
-  origin: 'http://127.0.0.1/:5000',
+  origin: 'https://auth-app-express-postgresql.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
+
 
 app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/', authRoutes);  // Changed to use root route
+app.use('/', authRoutes); 
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
   next();

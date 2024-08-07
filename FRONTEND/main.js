@@ -1,3 +1,7 @@
+// Update fetch URLs to point to your deployed backend URL
+const backendUrl = 'https://auth-app-express-postgresql.vercel.app';
+
+// Login
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
     event.preventDefault();
     
@@ -5,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     const password = document.getElementById('password').value;
 
     try {
-        const response = await fetch('http://localhost:5000/login', { 
+        const response = await fetch(`${backendUrl}/login`, { 
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -29,6 +33,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     }
 });
 
+// Registration
 document.getElementById('registerForm').addEventListener('submit', async (event) => {
     event.preventDefault();
     
@@ -45,7 +50,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     }
 
     try {
-        const response = await fetch('http://localhost:5000/register', {
+        const response = await fetch(`${backendUrl}/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,7 +69,6 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('An error occurred. Please try again. Main.js');
+        alert('An error occurred. Please try again.');
     }
 });
-
