@@ -15,7 +15,7 @@
     ],
     "routes": [
       {
-        "src": "/(register|login)",
+        "src": "/(.*)",
         "dest": "BACKEND/index.js"
       },
       {
